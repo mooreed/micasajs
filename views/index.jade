@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  
+  p #[a(href="/video1/start") Start Video1 ]
+  p #[a(href="/video1/pause") Pause Video1 ]
+  p #[a(href="/video1/stop") Stop Video1 ]
+
+  p #[a(href="/video2/start") Start Video2 ]
+  p #[a(href="/video2/pause") Pause Video2 ]
+  p #[a(href="/video2/stop") Stop Video2 ]

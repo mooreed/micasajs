@@ -1,0 +1,40 @@
+# Crontab Setup File
+# Append this file to the current crontab entries
+
+
+# CODE SAMPLE on how to append this file
+# =========================
+# # write out current crontab
+# crontab -l > cur_cron
+# # echo new cron into cron file
+# echo "00 09 * * 1-5 echo hello" >> cur_cron
+# # install new cron file
+# crontab cur_cron
+# rm cur_cron
+
+
+# Cron Cheat Sheet Table
+# =========================
+# +-------+---------------+--------------------------------+
+# | Field | Description   | Allowed Value                  |
+# |-------+---------------+--------------------------------+
+# | MIN   | Minute field  | 0 to 59                        |
+# | HOUR  | Hour field	  | 0 to 23                        |
+# | DOM	  | Day of Month  | 1-31                           |
+# | MON	  | Month field   | 1-12                           |
+# | DOW	  | Day Of Week	  | 0-6                            | 
+# | CMD	  | Command		  | Any command to be executed     |
+# +-------+---------------+--------------------------------+
+
+# Helpful Online Ref:
+# http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples/
+
+# Also NOTE the keyword options:
+# @yearly /home/ramesh/arch-linux/bin/cleanup-logs "day started"
+# @monthly /home/ramesh/arch-linux/bin/cleanup-logs "day started"
+# @daily /home/ramesh/arch-linux/bin/cleanup-logs "day started"
+
+
+# START ENTRIES
+# 1. Every Monday @ 4:00 am -- Setup working directory and then issue shell command
+00 04 * * 1 cd ~/micasajs/app.js && node app.js > app.log 
